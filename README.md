@@ -7,11 +7,9 @@ In this workshop you will use SQL Stream Builder to query and manipulate data st
 
 # Labs summary
 * [Introduction](#Introduction)
-* [Lab 1 - Create a Data Source](#DataSource)
-* Lab 2 - Create a Source Virtual Table for a topic with JSON messages
-* Lab 3 - Create a Source Virtual Table for a topic with AVRO messages
-* Lab 4 - Run a simple query
-* Lab 5 - Computing and storing agregation results
+* [Lab 1 - Create a Source Virtual Table for a topic with JSON messages](#VirtualTable)
+* Lab 2 - Run a simple query
+* Lab 3 - Computing and storing agregation results
 
 # Introduction
 <a name="Introduction"></a>
@@ -19,8 +17,8 @@ In this lab, and the subsequent ones, we will use the iot_enriched topic created
 So let’s start with a straightforward goal: to query the contents of the iot_enriched topic using SQL to examine the data that is being streamed.
 Albeit simple, this task will show the ease of use and power of SQL Stream Builder (SSB).
 
-<a name="DataSource"></a>
-# Lab 1 - Create a Data Source
+<a name="VirtualTable"></a>
+# Lab 1 - Create a Source Virtual Table for a topic with JSON messages
 Before we can start querying data from Kafka topics we need to register the Kafka clusters as data sources in SSB.
 
 1. On the Cloudera Manager console, click on the Cloudera logo at the top-left corner to ensure you are at the home page and then click on the SQL Stream Builder service.
@@ -46,6 +44,14 @@ Before we can start querying data from Kafka topics we need to register the Kafk
 6. You will create a table over the topic **iot_enriched**. This topic has simulation from the IoT with a field called **is_healthy** and **response** which is the prediction comming from the Machine Learning model. 
 
 ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image5.png)
+
+7. You will need to provide an schema so the the JSON can be interpreted. In our case, we just can let it to the SBS to **detect the schema in automatic** using the "Detect Schema" button
+
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image6.png)
+
+8. Save changes and you will have created your first SQL table over Kafka. 
+
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image7.png)
 
 
 
