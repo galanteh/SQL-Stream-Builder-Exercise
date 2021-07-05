@@ -57,7 +57,7 @@ Before we can start querying data from Kafka topics we need to register the Kafk
 # Lab 2 - Run a simple query
 Now that you have table available, we can run now a query. 
 
-1. Go back to the tab **compose**, and in the Text are you can type your SQL. In our case, we will just use a simple 
+1. Go back to the tab **compose**, and in the Text are you can type your SQL. In our case, we will just use a simple SQL and then we will chooose **execute**.
 
 ```sql
 Select * from iot_enriched_json
