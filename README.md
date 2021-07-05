@@ -8,7 +8,7 @@ In this workshop you will use SQL Stream Builder to query and manipulate data st
 # Labs summary
 * [Introduction](#Introduction)
 * [Lab 1 - Create a Source Virtual Table for a topic with JSON messages](#VirtualTable)
-* Lab 2 - Run a simple query
+* [Lab 2 - Run a simple query](#Query)
 * Lab 3 - Computing and storing agregation results
 
 # Introduction
@@ -52,6 +52,20 @@ Before we can start querying data from Kafka topics we need to register the Kafk
 8. Save changes and you will have created your first SQL table over Kafka. 
 
 ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image7.png)
+
+<a name="Query"></a>
+# Lab 2 - Run a simple query
+Now that you have table available, we can run now a query. 
+
+1. Go back to the tab **compose**, and in the Text are you can type your SQL. In our case, we will just use a simple 
+
+```sql
+Select * from iot_enriched_json
+```
+Tip: If you don't want to type the name of the table, just click CTRL+SPACE and a menu will be shown to select your table name.
+
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image8.png)
+
 
 
 
