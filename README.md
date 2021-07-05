@@ -29,9 +29,23 @@ Before we can start querying data from Kafka topics we need to register the Kafk
 
 3. On the logon screen, authenticate with user **admin** and password **supersecret1**
 
-3. You will notice that SSB already has a Kafka cluster registered as a data source, named CDP Kafka. This source is created automatically for SSB when it is installed on a cluster that also has a Kafka service:
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image1.png)
 
+3. Go to the **tables tab** and you will add a new table.
 
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image2.png)
+
+4. You will choose the first option on the menu, Apache Kafka.
+
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image3.png)
+
+5. You will notice that SSB already has a Kafka cluster registered as a data source, named CDP Kafka. This source is created automatically for SSB when it is installed on a cluster that also has a Kafka service:
+
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image4.png)
+
+6. You will create a table over the topic **iot_enriched**. This topic has simulation from the IoT with a field called **is_healthy** and **response** which is the prediction comming from the Machine Learning model. 
+
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image5.png)
 
 
 
