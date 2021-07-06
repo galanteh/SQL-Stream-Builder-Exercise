@@ -234,6 +234,62 @@ We will define MVs on top of the query we created in the previous lab. Make sure
 
 ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image30.png)
 
+2. Select the Materialized View tab for that job and set the following values for the its properties:
+
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image31.png)
+
+3. Choose the elements like in the image below.
+
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image32.png)
+
+4. To create a MV we need to have an API Key. The API key is the information given to clients so that they can access the MVs. If you have multiple MVs and want them to be accessed by different clients you can have multiple API keys to control access.
+
+If you have already created an API Key in SSB you can select it from the drop-down list. Otherwise, create one on the spot by clicking on the Add API Key button shown above. Use **sensor_6_sink** as the Key Name for example.
+
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image33.png)
+
+5. Click **Apply Configuration**. This will enable the **Add Query** button below.
+
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image34.png)
+
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image35.png)
+
+6. Click **Add Query** to create a new MV. It is possible to specify parameters for a MV so that you can filter the contents at query time. For example, we will create a MV that allows filtering by specifying a range of values for the sensorAverage column.
+
+    * URL Pattern:   **above60withRange/{lowerTemp}/{upperTemp}**
+    * Query Builder: **<click "Select All" to add all columns>**
+    * Filters:       
+        * sensorGreatThan60  greater 0
+            * AND
+         * sensorAverage greater or equal {lowerTemp}
+            * AND
+         * sensorAverage less or equal {upperTemp}
+
+    ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image36.png)
+    
+7. After that, you will notice that the new URL for this MV has placeholders for the {lowerTemp} and {upperTemp} parameters.
+8. opy the MV URL to a text editor and replace the placeholders with actual values for those parameters.
+The example below shows a filter for sensorAverage values between 80 and 85, inclusive:
+    ```
+    .../above60withRange/50/70?key=...
+    ```
+    
+    ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image37.png)    
+    
+9. After replacing the values, open the URL on your web browser to retrieve the filtered data.
+
+    ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image38.png)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
