@@ -124,6 +124,7 @@ Setting the Consumer Group properties for a virtual table will ensure that if yo
 ```
 Consumer Group: ssb-iot-1
 ```
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image18.png)
 
 
 
