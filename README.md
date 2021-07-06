@@ -13,6 +13,7 @@ In this workshop you will use SQL Stream Builder to query and manipulate data st
 * [Lab 4 - Setting the Consumer Group to the table](#Settings)
 * [Lab 5 - Computing and storing agregation results](#Agregation)
 * [Lab 6 - Materialized Views](#MV)
+* [Troubleshooting](#TS)
 
 # Introduction
 <a name="Introduction"></a>
@@ -279,6 +280,10 @@ The example below shows a filter for sensorAverage values between 80 and 85, inc
 9. After replacing the values, open the URL on your web browser to retrieve the filtered data.
 
     ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image38.png)
+
+<a name="TS"></a>
+# Troubleshooting
+1. If you see that SSB is giving time out on your queries, try restarting the service. Remember that we are working in one node all the stuff of a cluster which could be very demanding.
 
 
 
