@@ -9,7 +9,8 @@ In this workshop you will use SQL Stream Builder to query and manipulate data st
 * [Introduction](#Introduction)
 * [Lab 1 - Create a Source Virtual Table for a topic with JSON messages](#VirtualTable)
 * [Lab 2 - Run a simple query](#Query)
-* Lab 3 - Computing and storing agregation results
+* [Lab 3 - Doing a Transformation from the table](#Transformation)
+* Lab 4 - Computing and storing agregation results
 
 # Introduction
 <a name="Introduction"></a>
@@ -75,5 +76,11 @@ The data displayed on the screen is only a sample of the data returned by the qu
 
 ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image11.png)
 
+<a name="Transformation"></a>
+# Lab 3 - Doing a Transformation from the table
+In this lab, you will create a new table to run a transformation in one column, so you can have in the column *sensor_ts* a value showed in milliseconds instead of microseconds
+
+1. Let's create a new virtual table
+2. 
 
 
