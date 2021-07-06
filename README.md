@@ -102,5 +102,16 @@ In the end of the code, we will transform all the values into a Json again.
 
 ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image14.png)
 
+4. Detect the new schema. After saving the changes in the transformation tab, now the table description of the fields has been changed. So, the easy way is the re-run the detection of the schema and save once the again the new changes.
+
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image15.png)
+
+5. Re-run your query
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image16.png)
+
+7. Check the results
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image17.png)
+
+
 
 
