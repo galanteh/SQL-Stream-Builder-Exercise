@@ -107,9 +107,11 @@ In the end of the code, we will transform all the values into a Json again.
 ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image15.png)
 
 5. Re-run your query
+
 ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image16.png)
 
-7. Check the results
+6. Check the results
+
 ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image17.png)
 
 
