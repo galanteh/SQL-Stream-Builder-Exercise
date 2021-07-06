@@ -198,3 +198,29 @@ We want to start computing window aggregates for our incoming data stream and ma
         HOP(eventTimestamp, INTERVAL '1' SECOND, INTERVAL '5' MINUTE)
     ```
   
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image23.png)
+ 
+6. Wait looking at the logs about the process. If everything runs as expected, you will see in the logs and after that you will see the results automatically. 
+
+Logs:
+
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image24.png)
+
+Results:
+
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image25.png)
+
+7. You can check the SQL jobs running in the **Console (on the left bar) > SQL Jobs** tab.
+
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image26.png)
+
+9. If you click in the Flink dashboad, you can check the process at Flink. 
+
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image27.png)
+
+10. Finally, you will see the new data being sink in the topic **sensor6_stats** in the SMM console.
+
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image28.png)
+
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image29.png)
+
