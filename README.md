@@ -10,7 +10,8 @@ In this workshop you will use SQL Stream Builder to query and manipulate data st
 * [Lab 1 - Create a Source Virtual Table for a topic with JSON messages](#VirtualTable)
 * [Lab 2 - Run a simple query](#Query)
 * [Lab 3 - Doing a Transformation from the table](#Transformation)
-* Lab 4 - Computing and storing agregation results
+* [Lab 4 - Setting the Consumer Group to the table](#Settings)
+* Lab 5 - Computing and storing agregation results
 
 # Introduction
 <a name="Introduction"></a>
@@ -114,6 +115,15 @@ In the end of the code, we will transform all the values into a Json again.
 
 ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image17.png)
 
+# Lab 4 - Setting the Consumer Group to the table
+
+Setting the Consumer Group properties for a virtual table will ensure that if you stop a query and restart it later, the second query execute will continue to read the data from the point where the first query stopped, without skipping data. However, if multiple queries use the same virtual table, setting this property will effectively distribute the data across the queries so that each record is only read by a single query. If you want to share a virtual table with multiple distinct queries, ensure that the Consumer Group property is unset.
+
+1. Edit the table
+2. Click on the Properties tab, enter the following value for the Consumer Group property and click Save changes.
+```
+Consumer Group: ssb-iot-1
+```
 
 
 
