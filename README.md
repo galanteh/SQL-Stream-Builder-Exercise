@@ -1,4 +1,4 @@
-# SQL Stream Builder Exercise
+# Cloudera SQL Stream Builder Exercise
 This exercise is based on the [Edge2Ai Streaming Exercise](https://github.com/asdaraujo/edge2ai-workshop/blob/trunk/sql_stream_builder.adoc)
 
 **NOTE:** This lab assumes that the [From Edge to Streams Processing](https://github.com/asdaraujo/edge2ai-workshop/blob/trunk/streaming.adoc) lab has been completed. If you haven't done so, please ask your instructor to set your cluster state for you so that you can perform the steps in this lab (or you can do this yourself by SSH'ing to your cluster host and running the script `/tmp/resources/reset-to-lab.sh 9`) 
