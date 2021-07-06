@@ -80,7 +80,21 @@ The data displayed on the screen is only a sample of the data returned by the qu
 # Lab 3 - Doing a Transformation from the table
 In this lab, you will create a new table to run a transformation in one column, so you can have in the column *sensor_ts* a value showed in milliseconds instead of microseconds
 
-1. Let's create a new virtual table
-2. 
+1. Let's edit our virtual table
+
+2. Go to the tab "Transformation"
+
+3. In that eempty text are of transformation, please, introduce the following javascript code:
+
+```javascript
+var payload = JSON.parse(record.value);
+payload['sensor_ts'] = Math.round(payload['sensor_ts']/1000);
+delete payload['response'];
+JSON.stringify(payload);
+```
+This code will read the record value into a variable called payload. In that payload, you will have a dictionary with all the key and values. Code will transform the milliseconds (16 digits) into microseconds (13 digits) dividing the value by 1000 and round it up.
+After this operation it will remove a key called response which is the answer of the machine learning model but it's also in the is_healthy field.
+In the end of the code, we will transform all the values into a Json again. 
+
 
 
