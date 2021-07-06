@@ -82,7 +82,11 @@ In this lab, you will create a new table to run a transformation in one column, 
 
 1. Let's edit our virtual table
 
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image12.png)
+
 2. Go to the tab "Transformation"
+
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image13.png)
 
 3. In that eempty text are of transformation, please, introduce the following javascript code:
 
@@ -95,6 +99,8 @@ JSON.stringify(payload);
 This code will read the record value into a variable called payload. In that payload, you will have a dictionary with all the key and values. Code will transform the milliseconds (16 digits) into microseconds (13 digits) dividing the value by 1000 and round it up.
 After this operation it will remove a key called response which is the answer of the machine learning model but it's also in the is_healthy field.
 In the end of the code, we will transform all the values into a Json again. 
+
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image14.png)
 
 
 
