@@ -131,3 +131,19 @@ Consumer Group: ssb-iot-1
 # Lab 5 - Computing and storing agregation results
 We want to start computing window aggregates for our incoming data stream and make the aggregation results available for downstream applications. SQL Stream Builder’s Sink Virtual Tables give us the ability to publish/store streaming data to several different services (Kafka, AWS S3, Google GCS, Elastic Search and generic webhooks). In this lab we’ll use a Kafka sink to publish the results of our aggregation to another Kafka topic.
 
+```sql
+SELECT
+  sensor_id as device_id,
+  HOP_END(eventTimestamp, INTERVAL '1' SECOND, INTERVAL '5' MINUTE) as windowEnd,
+  count(*) as sensorCount,
+  sum(sensor_6) as sensorSum,
+  avg(cast(sensor_6 as float)) as sensorAverage,
+  min(sensor_6) as sensorMin,
+  max(sensor_6) as sensorMax,
+  sum(case when sensor_6 > 70 then 1 else 0 end) as sensorGreaterThan60
+FROM iot_enriched_json
+GROUP BY
+  sensor_id,
+  HOP(eventTimestamp, INTERVAL '1' SECOND, INTERVAL '5' MINUTE)
+  ```
+  
