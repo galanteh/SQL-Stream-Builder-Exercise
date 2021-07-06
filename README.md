@@ -14,6 +14,7 @@ In this workshop you will use SQL Stream Builder to query and manipulate data st
 * [Lab 5 - Computing and storing agregation results](#Agregation)
 * [Lab 6 - Materialized Views](#MV)
 * [Troubleshooting](#TS)
+* [Conclusion](#Conclusion)
 
 # Introduction
 <a name="Introduction"></a>
@@ -285,6 +286,9 @@ The example below shows a filter for sensorAverage values between 80 and 85, inc
 # Troubleshooting
 1. If you see that SSB is giving time out on your queries, try restarting the service. Remember that we are working in one node all the stuff of a cluster which could be very demanding.
 
+<a name="Conclusion"></a>
+# Conclusion
+We have now taken data from one topic, calculated aggregated results and written these to another topic. IIn order to validate that this was successful we have selected the result with an independent select query. Finally, we created Materialized Views for one of our jobs and queried those views through their REST endpoints.
 
 
 
