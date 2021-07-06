@@ -131,6 +131,31 @@ Consumer Group: ssb-iot-1
 # Lab 5 - Computing and storing agregation results
 We want to start computing window aggregates for our incoming data stream and make the aggregation results available for downstream applications. SQL Stream Builder’s Sink Virtual Tables give us the ability to publish/store streaming data to several different services (Kafka, AWS S3, Google GCS, Elastic Search and generic webhooks). In this lab we’ll use a Kafka sink to publish the results of our aggregation to another Kafka topic.
 
+1. Let’s first create a topic (**sensor6_stats**) where to publish our aggregation results:
+
+    1. Navigate to the SMM UI (**Cloudera Manager > SMM service > Streams Messaging Manager Web UI**).
+    
+    2. On the SMM UI, click the **Topics tab** (topics icon).
+
+    3. Click the **Add New** button.
+
+    ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image19.png)
+
+    4. Enter the following details for the topic and click Save when ready:
+
+        * Topic name: **sensor6_stats**
+
+        * Partitions: **10**
+
+        * Availability: **Low**
+
+        * Cleanup Policy: **delete**
+
+        ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image20.png)
+
+2. To create the Sink Virtual Table, click on **Console (on the left bar) > Virtual Tables > Sink Virtual Table > Add Source > Apache Kafka**.
+
+
 ```sql
 SELECT
   sensor_id as device_id,
