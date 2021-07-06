@@ -153,7 +153,21 @@ We want to start computing window aggregates for our incoming data stream and ma
 
         ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image20.png)
 
-2. To create the Sink Virtual Table, click on **Console (on the left bar) > Virtual Tables > Sink Virtual Table > Add Source > Apache Kafka**.
+2. To create the Sink Virtual Table, click on **Console (on the left bar) > Tables > Add Table > Apache Kafka**.
+
+3. In the new dialog, enter
+    1. Table Name: **sensor6_stats_sink**
+    2. Kafka Cluster: **CDP Kafka**
+    3. Topic Name: **sensor6_stats**
+    4. Data Format: **JSON**
+    5. Schema Definition: Check **Dynamic Schema**
+
+    ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image21.png)
+
+4. Save the new table and you will see a list of tables like this:
+
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image22.png)
+
 
 
 ```sql
