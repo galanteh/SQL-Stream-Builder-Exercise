@@ -12,6 +12,7 @@ In this workshop you will use SQL Stream Builder to query and manipulate data st
 * [Lab 3 - Doing a Transformation from the table](#Transformation)
 * [Lab 4 - Setting the Consumer Group to the table](#Settings)
 * [Lab 5 - Computing and storing agregation results](#Agregation)
+* [Lab 6 - Materialized Views](#MV)
 
 # Introduction
 <a name="Introduction"></a>
@@ -223,4 +224,16 @@ Results:
 ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image28.png)
 
 ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image29.png)
+
+<a name="MV"></a>
+# Lab 6 - Materialized Views
+SQL Stream Builder can also take keyed snapshots of the data stream and make that available through a REST interface in the form of Materialized Views. In this lab we’ll create and query Materialized Views (MV).
+We will define MVs on top of the query we created in the previous lab. Make sure that query is running before executing the steps below.
+
+1. On the **Console_ > SQL Jobs** tab, verify that the **sensor_6_sink** job is running. Select the job and click on the Edit Selected Job button.
+
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image30.png)
+
+
+
 
