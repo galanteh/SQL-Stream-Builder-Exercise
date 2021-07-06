@@ -168,21 +168,33 @@ We want to start computing window aggregates for our incoming data stream and ma
 
 ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image22.png)
 
+5. On the SSB UI, click on Console (on the left bar) > **Compose > SQL and type the query shown below.**
 
+    This query will compute aggregates over 30-seconds windows that slide forward every second. For a specific sensor value in the record (sensor_6) it computes the following aggregations for each window:
 
-```sql
-SELECT
-  sensor_id as device_id,
-  HOP_END(eventTimestamp, INTERVAL '1' SECOND, INTERVAL '5' MINUTE) as windowEnd,
-  count(*) as sensorCount,
-  sum(sensor_6) as sensorSum,
-  avg(cast(sensor_6 as float)) as sensorAverage,
-  min(sensor_6) as sensorMin,
-  max(sensor_6) as sensorMax,
-  sum(case when sensor_6 > 70 then 1 else 0 end) as sensorGreaterThan60
-FROM iot_enriched_json
-GROUP BY
-  sensor_id,
-  HOP(eventTimestamp, INTERVAL '1' SECOND, INTERVAL '5' MINUTE)
-  ```
+    * Number of events received
+
+    * Sum of the sensor_6 value for all the events
+
+    * Average of the sensor_6 value across all the events
+
+    * Min and max values of the sensor_6 field
+
+    * Number of events for which the sensor_6 value exceeds 70
+
+    ```sql
+    SELECT
+        sensor_id as device_id,
+        HOP_END(eventTimestamp, INTERVAL '1' SECOND, INTERVAL '5' MINUTE) as windowEnd,
+        count(*) as sensorCount,
+        sum(sensor_6) as sensorSum,
+        avg(cast(sensor_6 as float)) as sensorAverage,
+        min(sensor_6) as sensorMin,
+        max(sensor_6) as sensorMax,
+        sum(case when sensor_6 > 70 then 1 else 0 end) as sensorGreaterThan60
+   FROM iot_enriched_json
+   GROUP BY
+        sensor_id,
+        HOP(eventTimestamp, INTERVAL '1' SECOND, INTERVAL '5' MINUTE)
+    ```
   
