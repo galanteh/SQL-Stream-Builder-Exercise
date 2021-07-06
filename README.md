@@ -115,7 +115,7 @@ In the end of the code, we will transform all the values into a Json again.
 
 ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image17.png)
 
-<a name="Seettings"></a>
+<a name="Settings"></a>
 # Lab 4 - Setting the Consumer Group to the table
 
 Setting the Consumer Group properties for a virtual table will ensure that if you stop a query and restart it later, the second query execute will continue to read the data from the point where the first query stopped, without skipping data. However, if multiple queries use the same virtual table, setting this property will effectively distribute the data across the queries so that each record is only read by a single query. If you want to share a virtual table with multiple distinct queries, ensure that the Consumer Group property is unset.
