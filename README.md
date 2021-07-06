@@ -11,7 +11,7 @@ In this workshop you will use SQL Stream Builder to query and manipulate data st
 * [Lab 2 - Run a simple query](#Query)
 * [Lab 3 - Doing a Transformation from the table](#Transformation)
 * [Lab 4 - Setting the Consumer Group to the table](#Settings)
-* Lab 5 - Computing and storing agregation results
+* [Lab 5 - Computing and storing agregation results](#Agregation)
 
 # Introduction
 <a name="Introduction"></a>
@@ -127,5 +127,7 @@ Consumer Group: ssb-iot-1
 ```
 ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image18.png)
 
-
+<a name="Agregation"></a>
+# Lab 5 - Computing and storing agregation results
+We want to start computing window aggregates for our incoming data stream and make the aggregation results available for downstream applications. SQL Stream Builder’s Sink Virtual Tables give us the ability to publish/store streaming data to several different services (Kafka, AWS S3, Google GCS, Elastic Search and generic webhooks). In this lab we’ll use a Kafka sink to publish the results of our aggregation to another Kafka topic.
 
