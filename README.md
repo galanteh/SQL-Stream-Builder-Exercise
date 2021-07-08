@@ -305,11 +305,22 @@ You can see the image the final flow that we are trying to build
 ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image41.png)
 
 3. You need to go to the Processors icon, drag it to the canvas, and in the seleccion window, look for the InvokeHTTP and add it. 
-After that, you only need to configure the **Remote URL**, in our case, we can use this: **https://raw.githubusercontent.com/galanteh/SQL-Stream-Builder-Exercise/main/files/OUTPUT.json**
+
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image51.png)
+
+4. In the configuration of the InvokeHTTP, we will run some configurations in the tabs of **Settings, Scheduling and Properties**. 
+
+4.1. Setting tab: Check to automatically terminate all the output relationships but **Response**
+
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image52.png)
+
+4.2. Scheduling tab: Just change the next run with something big to avoid getting the file too quickly. In our case, can be 24h.
 
 ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image42.png)
 
+4.3. Properties tab: You only need to configure the **Remote URL**, in our case, we can use this: **https://raw.githubusercontent.com/galanteh/SQL-Stream-Builder-Exercise/main/files/OUTPUT.json**
 
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image53.png)
 
 <a name="TS"></a>
 # Troubleshooting
