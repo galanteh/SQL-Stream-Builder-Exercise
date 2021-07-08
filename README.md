@@ -13,6 +13,7 @@ In this workshop you will use SQL Stream Builder to query and manipulate data st
 * [Lab 4 - Setting the Consumer Group to the table](#Settings)
 * [Lab 5 - Computing and storing agregation results](#Agregation)
 * [Lab 6 - Materialized Views](#MV)
+* [Lab 7 - Real World example with Jsons of CDC](#CDC)
 * [Troubleshooting](#TS)
 * [Conclusion](#Conclusion)
 
@@ -281,6 +282,19 @@ The example below shows a filter for sensorAverage values between 80 and 85, inc
 9. After replacing the values, open the URL on your web browser to retrieve the filtered data.
 
     ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image38.png)
+
+<a name="CDC"></a>
+# Lab 7 - Real World example with Jsons of CDC
+In this lab, we will for example, use NiFi and SSB at Flink to process Json comming with information of CDC of another database system.
+
+A. In our first approach, we will use real JSON files that are located in the files directory of this repo.
+B. We will build a flow in NiFi to get the files, query that information upon on the type of operation and we will put in new Topics depending on the operation. 
+C. After doing that at NiFi, we will take them with SSB from the topcis and Query the information with virtual tables and SQL.
+
+## Part A - NiFi Get the files from Github
+1. First, let's go to NiFi and create a new Process Group called LabJson
+
+
 
 <a name="TS"></a>
 # Troubleshooting
