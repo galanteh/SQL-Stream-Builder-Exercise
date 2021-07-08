@@ -316,11 +316,11 @@ You can see the image the final flow that we are trying to build
 
 4.2. Scheduling tab: Just change the next run with something big to avoid getting the file too quickly. In our case, can be 24h.
 
-![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image42.png)
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image53.png)
 
 4.3. Properties tab: You only need to configure the **Remote URL**, in our case, we can use this: **https://raw.githubusercontent.com/galanteh/SQL-Stream-Builder-Exercise/main/files/OUTPUT.json**
 
-![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image53.png)
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image42.png)
 
 <a name="TS"></a>
 # Troubleshooting
