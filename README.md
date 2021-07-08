@@ -294,6 +294,21 @@ In this lab, we will for example, use NiFi and SSB at Flink to process Json comm
 ## Part A - NiFi Get the files from Github
 1. First, let's go to NiFi and create a new Process Group called LabJson
 
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image39.png)
+
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image40.png)
+
+2. After that, let's click on the new process group and we will have a clean canvas to work on it. 
+We are going to use a **InvokeHTTP** processor to get the JSON file from Github. Then we will query the JSON file with a **QueryRecord** processor to get three outputs: operations with INSERTS, UPDATES and DELETES. 
+You can see the image the final flow that we are trying to build
+
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image41.png)
+
+3. You need to go to the Processors icon, drag it to the canvas, and in the seleccion window, look for the InvokeHTTP and add it. 
+After that, you only need to configure the **Remote URL**, in our case, we can use this: **https://raw.githubusercontent.com/galanteh/SQL-Stream-Builder-Exercise/main/files/OUTPUT.json**
+
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image42.png)
+
 
 
 <a name="TS"></a>
