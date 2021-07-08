@@ -325,6 +325,12 @@ You can see the image the final flow that we are trying to build
 <a name="TS"></a>
 # Troubleshooting
 1. If you see that SSB is giving time out on your queries, try restarting the service. Remember that we are working in one node all the stuff of a cluster which could be very demanding.
+You can try this workaround: 
+* Stop all SQL Jobs
+* Close all the tabs of SSB, Flink and SMM
+* Restart from Cloudera Manager Flink
+* Restart SSB
+* Open a new of SSB, try again you Query.
 
 <a name="Conclusion"></a>
 # Conclusion
