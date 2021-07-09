@@ -360,6 +360,16 @@ You can see the image the final flow that we are trying to build
 
     ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image61.png)
 
+7. Now, we need to use our attribute **my.url** as a parameter to InvokeHTTP a get a Json file from the repo.
+    In the **Remote URL** just add **${my.url.0}** as the parameter. This is the way of expressions that NiFi use to invoke the value of an attribute. 
+
+    ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image62.png)
+    
+    Finally, remember that the only output that we neeed is response, so automatically terminate all the rest.
+
+9. Last step, we need to add a **QueryRecord** in your flow. 
+
+
 <a name="TS"></a>
 # Troubleshooting
 1. If you see that SSB is giving time out on your queries, try restarting the service. Remember that we are working in one node all the stuff of a cluster which could be very demanding.
