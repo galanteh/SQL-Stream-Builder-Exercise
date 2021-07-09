@@ -15,6 +15,7 @@ In this workshop you will use SQL Stream Builder to query and manipulate data st
 * [Lab 6 - Materialized Views](#MV)
 * [Lab 7 - Using Nifi to JSON CDC files](#CDCJson)
 * [Lab 8 - Putting JSON files into Kafka](#CDCKafka)
+* [Lab 9 - Query from SSB complex Json tables](#CDCSSB)
 * [Troubleshooting](#TS)
 * [Conclusion](#Conclusion)
 
@@ -452,6 +453,17 @@ To do it, we first new to create this three new topics.
 
 ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image76.png)    
 
+<a name="CDCSSB"></a>
+# Lab 9 - Query from SSB complex Json tables
+Now, in the SSB, let's create a table from the topics. 
+
+1. We will use the detection of the schema on the topics, like we shown in the image below:
+
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image80.png)    
+
+2. After that, let's query and we will see that the after field, will be a large string with a JSON inside. 
+
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image81.png)    
 
 <a name="TS"></a>
 # Troubleshooting
