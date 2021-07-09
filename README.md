@@ -330,6 +330,22 @@ You can see the image the final flow that we are trying to build
 
     ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image42.png)
 
+    4.4. Properties tab: You can optionally change the name of the box to **Get file list**
+
+    ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image54.png)
+
+5. Now, we need to add an SplitText processor as the output of the previous box on the relationship **response**
+
+    ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image56.png)
+    
+    Remember to stop all the relationships but **splits**
+    
+    ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image57.png)
+
+6. After we have our last step ready, we need to add a SplitText. This split text will split into flowfiles each line of the content.
+
+    ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image55.png)
+
 
 
 <a name="TS"></a>
