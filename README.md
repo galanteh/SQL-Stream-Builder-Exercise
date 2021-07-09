@@ -446,7 +446,7 @@ To do it, we first new to create this three new topics.
 
 4. Each **PublishKafkaRecord_2_0** should have this configuration: 
 
-![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image75.png)    
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image77.png)    
 
 5. Let give start to all the flow and we should go back to the SMM and we will start to see the information on each topic.
 
