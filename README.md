@@ -13,7 +13,8 @@ In this workshop you will use SQL Stream Builder to query and manipulate data st
 * [Lab 4 - Setting the Consumer Group to the table](#Settings)
 * [Lab 5 - Computing and storing agregation results](#Agregation)
 * [Lab 6 - Materialized Views](#MV)
-* [Lab 7 - Real World example with Jsons of CDC](#CDC)
+* [Lab 7 - Using Nifi to JSON CDC files](#CDCJson)
+* [Lab 8 - Putting JSON files into Kafka](#CDCKafka)
 * [Troubleshooting](#TS)
 * [Conclusion](#Conclusion)
 
@@ -283,8 +284,8 @@ The example below shows a filter for sensorAverage values between 80 and 85, inc
 
     ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image38.png)
 
-<a name="CDC"></a>
-# Lab 7 - Real World example with Jsons of CDC
+<a name="CDCJson"></a>
+# Lab 7 - Using Nifi to JSON CDC files
 In this lab, we will for example, use NiFi, Kafka and SSB at Flink to process Json comming with information of CDC of another database system.
 
 * In our first approach, we will use real JSON files that are located in the files directory of this repo.
@@ -415,6 +416,10 @@ You can see the image the final flow that we are trying to build
     Finally, we will set up the termination of output that we don't need
 
     ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image71.png)    
+
+<a name="CDCKafka"></a>
+# Lab 8 - Putting JSON files into Kafka
+
 
 <a name="TS"></a>
 # Troubleshooting
