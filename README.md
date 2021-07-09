@@ -404,12 +404,17 @@ You can see the image the final flow that we are trying to build
 
     ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image72.png)    
 
-    Now, in that 
+    Now, in that page, we will enable the service pressing in the in tha ray icon.
 
     ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image69.png)    
 
+    Then, another page will ask to enable. 
 
+    ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image70.png)    
 
+    Finally, we will set up the termination of output that we don't need
+
+    ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image71.png)    
 
 <a name="TS"></a>
 # Troubleshooting
