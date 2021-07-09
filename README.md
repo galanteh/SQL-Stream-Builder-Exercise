@@ -419,6 +419,38 @@ You can see the image the final flow that we are trying to build
 
 <a name="CDCKafka"></a>
 # Lab 8 - Putting JSON files into Kafka
+Now in this laboratory, we are going to get all the JSON from the INSERT, UPDATE and DELETE operations and put it into three new topics in Kafka. 
+To do it, we first new to create this three new topics. 
+
+1. Go to the SMM console, click on the **Topics** tab in the left and let's create the three new topics: **INSERT_JSON**, **UPDATE_JSON** and **DELETE_JSON**
+
+    ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image73.png)    
+
+    ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image74.png)    
+
+    Just create each new topic with this options: 
+    * Topic name will be: **INSERT_JSON**, **UPDATE_JSON** and **DELETE_JSON**
+    * Partitions: **10**
+    * Availability: **Low**
+    * Cleanup policy: **Delete**
+
+    ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image74.png)    
+
+2. Go back to NiFi and let's add in each output of the last processor a **PublishKafkaRecord_2_0** for each operation: **INSERT**, **UPDATE** and **DELETE**
+
+3. Create a new variable in the canvas called **broker** and the value will be: **edge2ai-1.dim.local:9092**
+
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image82.png)    
+
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image83.png)    
+
+4. Each **PublishKafkaRecord_2_0** should have this configuration: 
+
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image75.png)    
+
+5. Let give start to all the flow and we should go back to the SMM and we will start to see the information on each topic.
+
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image76.png)    
 
 
 <a name="TS"></a>
