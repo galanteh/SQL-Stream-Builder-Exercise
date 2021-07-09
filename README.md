@@ -365,7 +365,9 @@ You can see the image the final flow that we are trying to build
 
     ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image62.png)
     
-    Finally, remember that the only output that we neeed is response, so automatically terminate all the rest.
+    Finally, remember that the only output that we need is response, so automatically terminate all the rest.
+    
+    ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image52.png)
 
 9. Last step, we need to add a **QueryRecord** in your flow. 
 
