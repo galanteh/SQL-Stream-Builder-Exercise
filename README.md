@@ -334,19 +334,31 @@ You can see the image the final flow that we are trying to build
 
     ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image54.png)
 
-5. Now, we need to add an SplitText processor as the output of the previous box on the relationship **response**
+5. Now, we need to add an SplitText processor as the output of the previous box on the relationship **response**. This processor will split the list of 5 URL files into 5 flowfiles of one each line of the content. Every line is an URL.
 
     ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image56.png)
+    
+    Set the **Line Split Count** to **1**
+    
+    ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image59.png)
     
     Remember to stop all the relationships but **splits**
     
     ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image57.png)
 
-6. After we have our last step ready, we need to add a SplitText. This split text will split into flowfiles each line of the content.
+6. After we have our last step ready, we need to add an ExtractText. This extract the URL from the content into an attribute which will act as a parameter.
 
     ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image55.png)
 
+    We need to add using the sign **+** a new extraction parameter. We can extract any regular expression and will be stored in that variable. 
+    We are going to use **my.url** as the atttribute name and the regular expression needs to be **.\***. 
+    You can check the image as the final result.
+   
+    ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image60.png)
 
+    Remember to stop all the relationships but **matched**
+
+    ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image61.png)
 
 <a name="TS"></a>
 # Troubleshooting
