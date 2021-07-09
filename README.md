@@ -285,11 +285,12 @@ The example below shows a filter for sensorAverage values between 80 and 85, inc
 
 <a name="CDC"></a>
 # Lab 7 - Real World example with Jsons of CDC
-In this lab, we will for example, use NiFi and SSB at Flink to process Json comming with information of CDC of another database system.
+In this lab, we will for example, use NiFi, Kafka and SSB at Flink to process Json comming with information of CDC of another database system.
 
 * In our first approach, we will use real JSON files that are located in the files directory of this repo.
 * We will build a flow in NiFi to get the files, query that information upon on the type of operation and we will put in new Topics depending on the operation. 
-* After doing that at NiFi, we will take them with SSB from the topcis and Query the information with virtual tables and SQL.
+* Insert that operations on JSON in three Kafka topics
+* After doing that we will take them with SSB from the topcis and Query the information with virtual tables and SQL.
 
 ## Part A - NiFi Get the files from Github
 1. First, let's go to NiFi and create a new Process Group called LabJson
@@ -299,7 +300,14 @@ In this lab, we will for example, use NiFi and SSB at Flink to process Json comm
 ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image40.png)
 
 2. After that, let's click on the new process group and we will have a clean canvas to work on it. 
-We are going to use a **InvokeHTTP** processor to get the JSON file from Github. Then we will query the JSON file with a **QueryRecord** processor to get three outputs: operations with INSERTS, UPDATES and DELETES. 
+We are going to run the following steps in NiFi:
+    * We will use a **InvokeHTTP** processor to get the list of JSON files from Github that is on **https://raw.githubusercontent.com/galanteh/SQL-Stream-Builder-Exercise/main/files/files.txt**
+    * After that, we will split that file into 5 lines
+    * Each line will be a new FlowFile
+    * Extract from the content of each FlowFile the line which contains a new URL and put it into an Attribute of the flowfile
+    * We will use get that JSON file from the repo
+    * We will query each JSON file with a **QueryRecord** processor to get three outputs: operations with INSERTS, UPDATES and DELETES. 
+
 You can see the image the final flow that we are trying to build
 
 ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image41.png)
@@ -310,17 +318,19 @@ You can see the image the final flow that we are trying to build
 
 4. In the configuration of the InvokeHTTP, we will run some configurations in the tabs of **Settings, Scheduling and Properties**. 
 
-4.1. Setting tab: Check to automatically terminate all the output relationships but **Response**
+    4.1. Setting tab: Check to automatically terminate all the output relationships but **Response**
 
-![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image52.png)
+    ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image52.png)
 
-4.2. Scheduling tab: Just change the next run with something big to avoid getting the file too quickly. In our case, can be 24h.
+    4.2. Scheduling tab: Just change the next run with something big to avoid getting the file too quickly. In our case, can be every 5 sec.
 
-![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image53.png)
+    ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image53.png)
 
-4.3. Properties tab: You only need to configure the **Remote URL**, in our case, we can use this: **https://raw.githubusercontent.com/galanteh/SQL-Stream-Builder-Exercise/main/files/OUTPUT.json**
+    4.3. Properties tab: You only need to configure the **Remote URL**, in our case, we can use this: **https://raw.githubusercontent.com/galanteh/SQL-Stream-Builder-Exercise/main/files/files.txt**
 
-![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image42.png)
+    ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image42.png)
+
+
 
 <a name="TS"></a>
 # Troubleshooting
