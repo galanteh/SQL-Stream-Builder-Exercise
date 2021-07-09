@@ -336,7 +336,7 @@ You can see the image the final flow that we are trying to build
 
 5. Now, we need to add an SplitText processor as the output of the previous box on the relationship **response**. This processor will split the list of 5 URL files into 5 flowfiles of one each line of the content. Every line is an URL.
 
-    ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image56.png)
+    ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image55.png)
     
     Set the **Line Split Count** to **1**
     
@@ -348,7 +348,7 @@ You can see the image the final flow that we are trying to build
 
 6. After we have our last step ready, we need to add an ExtractText. This extract the URL from the content into an attribute which will act as a parameter.
 
-    ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image55.png)
+    ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image56.png)
 
     We need to add using the sign **+** a new extraction parameter. We can extract any regular expression and will be stored in that variable. 
     We are going to use **my.url** as the atttribute name and the regular expression needs to be **.\***. 
