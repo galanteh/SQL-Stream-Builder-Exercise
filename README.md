@@ -449,7 +449,11 @@ To do it, we first new to create this three new topics.
 
 ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image77.png)    
 
-5. Let give start to all the flow and we should go back to the SMM and we will start to see the information on each topic.
+5. Don't forget to check the terminations of the output relationships
+
+![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image78.png)    
+
+6. Let give start to all the flow and we should go back to the SMM and we will start to see the information on each topic.
 
 ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image76.png)    
 
