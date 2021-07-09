@@ -1,0 +1,5 @@
+https://raw.githubusercontent.com/galanteh/SQL-Stream-Builder-Exercise/main/files/OUTPUT.json
+https://raw.githubusercontent.com/galanteh/SQL-Stream-Builder-Exercise/main/files/PAY_TRANSACTIONS.json
+https://raw.githubusercontent.com/galanteh/SQL-Stream-Builder-Exercise/main/files/SCO_CUSTOMERS.json
+https://raw.githubusercontent.com/galanteh/SQL-Stream-Builder-Exercise/main/files/TBL_DETAIL_TRAN.json
+https://raw.githubusercontent.com/galanteh/SQL-Stream-Builder-Exercise/main/files/TBL_TRAN_BENEFIT.json
