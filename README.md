@@ -369,7 +369,46 @@ You can see the image the final flow that we are trying to build
     
     ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image52.png)
 
-9. Last step, we need to add a **QueryRecord** in your flow. 
+9. Last step, we need to add a **QueryRecord** in your flow. Let's add a QueryRecord connected from the response output of the **InvokeHTTP** of the last step.
+    QueryRecord will allow us to run SQL over the JSON to query and filter the lines into INSERTS, UPDATES and DELETES.
+    To configure the **QueryRecord** we need to configure a **Record Reader** and a **Record Writer**.
+    We don't have any **Record Reader** service, so we will create a new one.
+    
+    ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image63.png)
+    
+    New service will allow to read the JSON doing an automatic detection of the format. 
+    
+    ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image64.png)
+    
+    We will do the same with the writer
+    
+    ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image65.png)
+    
+    ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image66.png)
+    
+    After doing this, we will add the three SQL operations: INSERT, UPDATE, DELETE. 
+    We need to add it using the **+** sign on the corner.
+    
+    ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image67.png)    
+
+    INSERT > **SELECT * FROM FLOWFILE WHERE op_type = 'I'**
+    
+    UPDATE > **SELECT * FROM FLOWFILE WHERE op_type = 'U'**
+    
+    DELETE > **SELECT * FROM FLOWFILE WHERE op_type = 'D'**    
+
+    ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image68.png)    
+    
+    Now, last step is to enable the **Record Reader** and the **Record Writer** in the service area. 
+    To do this, you can go to that area using the arrow at the end of each service like we show in the image
+
+    ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image72.png)    
+
+    Now, in that 
+
+    ![](https://github.com/galanteh/SQL-Stream-Builder-Exercise/blob/main/images/image69.png)    
+
+
 
 
 <a name="TS"></a>
